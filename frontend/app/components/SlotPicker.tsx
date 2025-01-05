@@ -69,7 +69,8 @@ const SlotPicker = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ date })
+                body: JSON.stringify({ date }),
+                credentials: 'include'
             })
 
             if (!res.ok) {
@@ -97,7 +98,8 @@ const URL = "https://book-table-svhz.onrender.com/api/v1/table-booking/book-tabl
                     userDetails,
                     date,
                     timeSlot
-                })
+                }),
+                credentials: 'include'
             })
 
             if (!res.ok) {
