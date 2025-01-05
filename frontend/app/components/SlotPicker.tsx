@@ -61,7 +61,7 @@ const SlotPicker = () => {
 
     const getTimeSlots = async (d: Date) => {
         const date = d.toISOString()
-        const URL = "http://localhost:7979/api/v1/table-booking/select-date-time-slots"
+        const URL = "https://book-table-svhz.onrender.com/api/v1/table-booking/select-date-time-slots"
         try {
 
             const res = await fetch(URL, {
@@ -87,8 +87,8 @@ const SlotPicker = () => {
     const createBooking = async (userDetails: object, date: Date, timeSlot: string) => {
 
         try {
-
-            const res = await fetch('http://localhost:7979/api/v1/table-booking/book-table', {
+const URL = "https://book-table-svhz.onrender.com/api/v1/table-booking/book-table
+            const res = await fetch(URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
