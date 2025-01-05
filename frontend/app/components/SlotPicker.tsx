@@ -86,8 +86,8 @@ const SlotPicker = () => {
 
     const createBooking = async (userDetails: object, date: Date, timeSlot: string) => {
 
+const URL = "https://book-table-svhz.onrender.com/api/v1/table-booking/book-table"
         try {
-const URL = "https://book-table-svhz.onrender.com/api/v1/table-booking/book-table
             const res = await fetch(URL, {
                 method: 'POST',
                 headers: {
