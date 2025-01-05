@@ -105,12 +105,12 @@ const URL = "https://book-table-svhz.onrender.com/api/v1/table-booking/book-tabl
             }
 
             const data = await res.json()
-            console.log("Booking created:", data);
 
-            setTimeout(() => {
+
+    
                 setBookingId(data?.bookingId)
                 setCurrentPage(3)
-            }, 3000)
+    
 
         } catch (error) {
             console.log("Error creating booking:", error);
