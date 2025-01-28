@@ -8,6 +8,7 @@ const checkDateAndTime = asyncHandeler(async (req, res) => {
 
     const { date } = req.body
 
+    console.log(date)
     if (!date) {
         throw new ApiError(401, "Date is required!")
     }

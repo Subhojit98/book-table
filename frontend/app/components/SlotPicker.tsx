@@ -61,7 +61,8 @@ const SlotPicker = () => {
 
     const getTimeSlots = async (d: Date) => {
         const date = d.toISOString()
-        const URL = "https://book-table-svhz.onrender.com/api/v1/table-booking/select-date-time-slots"
+        console.log(date)
+        const URL = `https://book-table-svhz.onrender.com/api/v1/table-booking/select-date-time-slots`
         try {
 
             const res = await fetch(URL, {
@@ -86,7 +87,7 @@ const SlotPicker = () => {
 
     const createBooking = async (userDetails: object, date: Date, timeSlot: string) => {
 
-const URL = "https://book-table-svhz.onrender.com/api/v1/table-booking/book-table"
+        const URL = `https://book-table-svhz.onrender.com/api/v1/table-booking/book-table`
         try {
             const res = await fetch(URL, {
                 method: 'POST',
@@ -107,10 +108,10 @@ const URL = "https://book-table-svhz.onrender.com/api/v1/table-booking/book-tabl
             const data = await res.json()
 
 
-    
-                setBookingId(data?.bookingId)
-                setCurrentPage(3)
-    
+
+            setBookingId(data?.bookingId)
+            setCurrentPage(3)
+
 
         } catch (error) {
             console.log("Error creating booking:", error);
@@ -169,7 +170,9 @@ const URL = "https://book-table-svhz.onrender.com/api/v1/table-booking/book-tabl
                     />
                 </div>
             </div>}
+
             {/* time slots -> */}
+
             {isTimeSlotSelected && slot && <div className="w-full h-1/2 grid grid-cols-3 gap-x-3 gap-y-3 mt-14 text-white">
                 {
                     slot.map((slot, i) => (
@@ -180,7 +183,9 @@ const URL = "https://book-table-svhz.onrender.com/api/v1/table-booking/book-tabl
                 }
             </div>}
 
-            {isTimeSlotSelected && <button className='bg-red-500 text-white mt-8 p-3 px-5 rounded-lg hover:bg-red-600' onClick={() => setIsTimeSlotSelected(false)}>Go Back</button>}
+            {isTimeSlotSelected &&
+                <button className='bg-red-500 text-white mt-8 p-3 px-5 rounded-lg hover:bg-red-600' onClick={() => setIsTimeSlotSelected(false)}>Go Back</button>
+            }
         </div>
 
     )
